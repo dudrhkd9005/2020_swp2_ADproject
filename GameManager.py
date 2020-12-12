@@ -11,11 +11,22 @@ class Player:
         self.x_change = 2
         self.x = 371
         self.y = 600
-        self.cx = 293
+        cx = 293
         self.charactorX = []
         for i in range(5):
-            self.charactorX.append(self.cx)
-            self.cx += 39
+            self.charactorX.append(cx)
+            cx += 39
+
+    def move(self, strMove):
+        if (strMove == "-"):
+            if self.x != self.charactorX[0]:
+                    self.x_change -= 1
+                    self.x = self.charactorX[self.x_change]
+        elif(strMove == "+"):
+            if self.x != self.charactorX[len(self.charactorX) - 1]:
+                    self.x_change += 1
+                    self.x = self.charactorX[self.x_change]
+
 
 class GameManager:
 
@@ -154,42 +165,22 @@ class GameManager:
         for i in range(3):
             self.clearLabel[i] = self.font.render(self.clearStr[i], True, Black)
 
-    def readtxt(self, stage):
-        f = open("Assets/Resources/Stage/stage{}".format(stage) + ".txt", "r")
-        line = f.readlines()
-        f.close()
-        return line
-
     def game(self, stage):
         player = Player()
 
         crashed = False
         while not crashed:
-
             for event in pygame.event.get():
-                if(not self.isEndgame):
+                if (not self.isEndgame):
                     if event.type == pygame.QUIT:
                         crashed = True
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_LEFT:
-                            if player.x != player.charactorX[0]:
-                                player.x_change -= 1
-                                player.x = player.charactorX[player.x_change]
+                            player.move("-")
                         elif event.key == pygame.K_RIGHT:
-                            if player.x != player.charactorX[len(player.charactorX) - 1]:
-                                player.x_change += 1
-                                player.x = player.charactorX[player.x_change]
+                            player.move("+")
                         if event.key == pygame.K_SPACE:
-                            for i in range(13, -1, -1):
-                                if self.stageblocks[i][player.x_change] != '0':
-                                    pygame.mixer.music.load(self.shoot_effectSound)
-                                    pygame.mixer.music.play(0)
-                                    self.resultblock.append(int(self.stageblocks[i][player.x_change]) - 1)
-                                    self.checkblock.append(self.stageblocks[i][player.x_change])
-                                    self.colorPanel.fill(self.colorPanel_colors[int(self.stageblocks[i][player.x_change]) - 1])
-                                    self.playerLaser.fill(self.colorPanel_colors[int(self.stageblocks[i][player.x_change]) - 1])
-                                    self.stageblocks[i][player.x_change] = '0'
-                                    break
+                            self.check_blocks(player)
                 else:
                     if event.type == pygame.MOUSEBUTTONUP:
                         curr_x, curr_y = event.pos
@@ -203,101 +194,120 @@ class GameManager:
                             print(3)
                             return "Next_Stage"
 
-            #rendering
-            self.gamepad.fill(White)
-            self.gamepad.blit(self.background, (0, 0))
-            self.gamepad.blit(self.colorPanel, (300, 100))
-            for i in range(3):
-                self.gamepad.blit(self.targetblock, (self.targetblockX, self.targetblockY[i]))
-            for i in range(0, 14):
-                for j in range(0, 5):
-                    self.gamepad.blit(self.backblock, (self.backblockX[j], self.backblockY[i]))
-
-            self.gamepad.blit(self.playerLaser, (player.x + 19, 100))
-            for i in range(0, 14):
-                for j in range(0, 5):
-                    if self.stageblocks[i][j] != '0':
-                        self.gamepad.blit(self.blocks[int(self.stageblocks[i][j]) - 1], (self.backblockX[j] + 0.5, self.backblockY[i] + 0.5))
-
-            for i in range(len(self.resultblock)):
-                self.gamepad.blit(self.blocks[self.resultblock[i]], (self.targetblockX + 15, self.targetblockY[i] + 13))
-
-            self.comboUI = self.font.render("Combo : " + str(self.combo), True, White)
-            self.timeUI = self.font.render("Time : " + str(self.time), True, White)
-            self.gamepad.blit(self.comboUI, (800, 200))
-            self.gamepad.blit(self.timeUI, (800, 350))
-            self.gamepad.blit(player.charactor, (player.x, player.y))
-
-            if not self.isEndgame:
-                self.time = int(pygame.time.get_ticks() / 1000 - self.lowtime)
-                if len(self.resultblock) == 3:
-                    if len(set(self.checkblock)) == 1:
-                        self.resultblock = []
-                        self.checkblock = []
-                        self.combo += 1
-                        self.comboTime = 0
-                        self.dt = pygame.time.get_ticks() / 1000
-                        self.comboStart = True
-                        if self.maxCombo < self.combo:
-                            self.maxCombo = self.combo
-                    else:
-                        self.isEndgame = True
-
-                if self.comboStart:
-                    self.comboTime = pygame.time.get_ticks() / 1000 - self.dt
-                    if self.comboTime >= 2.5:
-                        self.combo = 0
-                        self.comboStart = False
-
-                self.zerocurrent = sum([len(set(self.stageblocks[i])) for i in range(len(self.stageblocks))])
-
-                if self.zerocurrent == 14:
-                    if len(BUTTONS._STAGE_BUTTONS) > stage:
-                        BUTTONS._STAGE_BUTTONS[stage]['locked'] = False
-                    self.isClear = True
-                    self.isEndgame = True
-            else:
-                self.gamepad.blit(self.result_Background, (400, 40))
-                self.gamepad.blit(self.result_table, (430, 180))
-                self.gamepad.blit(self.result_menubtn, (480, 580))
-                self.gamepad.blit(self.result_retrybtn, (580, 580))
-
-                if self.isClear:
-                    self.gamepad.blit(self.result_winback, (380, 30))
-                    self.gamepad.blit(self.result_nextbtn, (680, 580))
-                    for i in range(3):
-                        self.gamepad.blit(self.clearLabel[i], self.clearLabelPos[i])
-                        self.gamepad.blit(self.star_Background[i], self.starPos[i])
-                    self.gamepad.blit(self.star[0], self.starPos[0])
-                    self.gamepad.blit(self.goldMark[0], self.goldmarkPos[0])
-
-                    if self.maxCombo >= int(self.clear_misson[0]) or self.time < int(self.clear_misson[1]):
-                        self.gamepad.blit(self.star[2], self.starPos[2])
-                    if self.maxCombo >= int(self.clear_misson[0]) and self.time < int(self.clear_misson[1]):
-                        self.gamepad.blit(self.star[1], self.starPos[1])
-                        self.gamepad.blit(self.star[2], self.starPos[2])
-
-                    if self.maxCombo >= int(self.clear_misson[0]):
-                        self.gamepad.blit(self.goldMark[1], self.goldmarkPos[1])
-                    else:
-                        self.gamepad.blit(self.xMark[1], self.xmarkPos[1])
-
-                    if self.time < int(self.clear_misson[1]):
-                        self.gamepad.blit(self.goldMark[2], self.goldmarkPos[2])
-                    else:
-                        self.gamepad.blit(self.xMark[2], self.xmarkPos[2])
-                else:
-                    self.gamepad.blit(self.result_loseback, (380, 30))
-                    for i in range(3):
-                        self.gamepad.blit(self.xMark[i], self.xmarkPos[i])
-                        self.gamepad.blit(self.clearLabel[i], self.clearLabelPos[i])
-                        self.gamepad.blit(self.star_Background[i], self.starPos[i])
-
-
+            self.render(player, stage)
 
             pygame.display.update()
             self.fps.tick(60)
             pygame.display.flip()
-        pygame.quit()
-        quit()
 
+    def render(self, player, stage):
+        # rendering
+        self.gamepad.fill(White)
+        self.gamepad.blit(self.background, (0, 0))
+        self.gamepad.blit(self.colorPanel, (300, 100))
+        for i in range(3):
+            self.gamepad.blit(self.targetblock, (self.targetblockX, self.targetblockY[i]))
+        for i in range(0, 14):
+            for j in range(0, 5):
+                self.gamepad.blit(self.backblock, (self.backblockX[j], self.backblockY[i]))
+
+        self.gamepad.blit(self.playerLaser, (player.x + 19, 100))
+        for i in range(0, 14):
+            for j in range(0, 5):
+                if self.stageblocks[i][j] != '0':
+                    self.gamepad.blit(self.blocks[int(self.stageblocks[i][j]) - 1],
+                                      (self.backblockX[j] + 0.5, self.backblockY[i] + 0.5))
+
+        for i in range(len(self.resultblock)):
+            self.gamepad.blit(self.blocks[self.resultblock[i]], (self.targetblockX + 15, self.targetblockY[i] + 13))
+
+        self.comboUI = self.font.render("Combo : " + str(self.combo), True, White)
+        self.timeUI = self.font.render("Time : " + str(self.time), True, White)
+        self.gamepad.blit(self.comboUI, (800, 200))
+        self.gamepad.blit(self.timeUI, (800, 350))
+        self.gamepad.blit(player.charactor, (player.x, player.y))
+
+        if not self.isEndgame:
+            self.time = int(pygame.time.get_ticks() / 1000 - self.lowtime)
+            if len(self.resultblock) == 3:
+                if len(set(self.checkblock)) == 1:
+                    self.resultblock = []
+                    self.checkblock = []
+                    self.combo += 1
+                    self.comboTime = 0
+                    self.dt = pygame.time.get_ticks() / 1000
+                    self.comboStart = True
+                    if self.maxCombo < self.combo:
+                        self.maxCombo = self.combo
+                else:
+                    self.isEndgame = True
+
+            if self.comboStart:
+                self.comboTime = pygame.time.get_ticks() / 1000 - self.dt
+                if self.comboTime >= 2.5:
+                    self.combo = 0
+                    self.comboStart = False
+
+            self.zerocurrent = sum([len(set(self.stageblocks[i])) for i in range(len(self.stageblocks))])
+
+            if self.zerocurrent == 14:
+                if len(BUTTONS._STAGE_BUTTONS) > stage:
+                    BUTTONS._STAGE_BUTTONS[stage]['locked'] = False
+                self.isClear = True
+                self.isEndgame = True
+        else:
+            self.gamepad.blit(self.result_Background, (400, 40))
+            self.gamepad.blit(self.result_table, (430, 180))
+            self.gamepad.blit(self.result_menubtn, (480, 580))
+            self.gamepad.blit(self.result_retrybtn, (580, 580))
+
+            if self.isClear:
+                self.gamepad.blit(self.result_winback, (380, 30))
+                self.gamepad.blit(self.result_nextbtn, (680, 580))
+                for i in range(3):
+                    self.gamepad.blit(self.clearLabel[i], self.clearLabelPos[i])
+                    self.gamepad.blit(self.star_Background[i], self.starPos[i])
+                self.gamepad.blit(self.star[0], self.starPos[0])
+                self.gamepad.blit(self.goldMark[0], self.goldmarkPos[0])
+
+                if self.maxCombo >= int(self.clear_misson[0]) or self.time < int(self.clear_misson[1]):
+                    self.gamepad.blit(self.star[2], self.starPos[2])
+                if self.maxCombo >= int(self.clear_misson[0]) and self.time < int(self.clear_misson[1]):
+                    self.gamepad.blit(self.star[1], self.starPos[1])
+                    self.gamepad.blit(self.star[2], self.starPos[2])
+
+                if self.maxCombo >= int(self.clear_misson[0]):
+                    self.gamepad.blit(self.goldMark[1], self.goldmarkPos[1])
+                else:
+                    self.gamepad.blit(self.xMark[1], self.xmarkPos[1])
+
+                if self.time < int(self.clear_misson[1]):
+                    self.gamepad.blit(self.goldMark[2], self.goldmarkPos[2])
+                else:
+                    self.gamepad.blit(self.xMark[2], self.xmarkPos[2])
+            else:
+                self.gamepad.blit(self.result_loseback, (380, 30))
+                for i in range(3):
+                    self.gamepad.blit(self.xMark[i], self.xmarkPos[i])
+                    self.gamepad.blit(self.clearLabel[i], self.clearLabelPos[i])
+                    self.gamepad.blit(self.star_Background[i], self.starPos[i])
+
+    def check_blocks(self, player):
+        for i in range(13, -1, -1):
+            if self.stageblocks[i][player.x_change] != '0':
+                pygame.mixer.music.load(self.shoot_effectSound)
+                pygame.mixer.music.play(0)
+                self.resultblock.append(int(self.stageblocks[i][player.x_change]) - 1)
+                self.checkblock.append(self.stageblocks[i][player.x_change])
+                self.colorPanel.fill(
+                    self.colorPanel_colors[int(self.stageblocks[i][player.x_change]) - 1])
+                self.playerLaser.fill(
+                    self.colorPanel_colors[int(self.stageblocks[i][player.x_change]) - 1])
+                self.stageblocks[i][player.x_change] = '0'
+                break
+
+    def readtxt(self, stage):
+        f = open("Assets/Resources/Stage/stage{}".format(stage) + ".txt", "r")
+        line = f.readlines()
+        f.close()
+        return line

@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f2f94349-72b7-4d9d-80f7-4dfd795279b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_0.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_1.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_2.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Stage_3.txt.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stage5.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="171" column="38" lean-forward="true" selection-start-line="171" selection-start-column="38" selection-end-line="171" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -51,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="-2">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#17#30#0" expanded="true" />
               </folding>
@@ -117,6 +104,7 @@
       <find>time</find>
       <find>self.time</find>
       <find>star</find>
+      <find>stage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -366,8 +354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="-2">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#17#30#0" expanded="true" />
           </folding>
@@ -376,8 +364,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GameManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="171" column="38" lean-forward="true" selection-start-line="171" selection-start-column="38" selection-end-line="171" selection-end-column="38" />
+        <state relative-caret-position="330">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
