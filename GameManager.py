@@ -263,7 +263,8 @@ class GameManager:
 
             if self.isClear:
                 self.gamepad.blit(self.result_winback, (380, 30))
-                self.gamepad.blit(self.result_nextbtn, (680, 580))
+                if len(BUTTONS._STAGE_BUTTONS) > stage:
+                    self.gamepad.blit(self.result_nextbtn, (680, 580))
                 for i in range(3):
                     self.gamepad.blit(self.clearLabel[i], self.clearLabelPos[i])
                     self.gamepad.blit(self.star_Background[i], self.starPos[i])

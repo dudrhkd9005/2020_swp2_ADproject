@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2f94349-72b7-4d9d-80f7-4dfd795279b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Kenney/Particle samples/License.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kenney/Particle samples/License.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewSurfaceShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewSurfaceShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/CHANGELOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/CHANGELOG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/CHANGELOG.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFImporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFImporter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFImporter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFImporter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFMenuTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFMenuTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFMenuTool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/BFMenuTool.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/FntParse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/FntParse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/FntParse.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Editor/FntParse.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/README.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/README.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/README.rtf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/README.rtf.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/BFILogic.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/BFILogic.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/BFILogic.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/BFILogic.cginc.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font2.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font2.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font2.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font2.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font3.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font3.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font3.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font3.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font4.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font4.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font4.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font4.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font5.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font5.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font5.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/BitmapFontImporter/Shaders/Font5.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Difficulty_Select.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Difficulty_Select.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mouse_Particle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mouse_Particle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Script.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI pack Space/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI pack Space/license.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUTTONS.py" beforeDir="false" afterPath="$PROJECT_DIR$/BUTTONS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprite/sd.fnt" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite/sd.fnt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selectStages.py" beforeDir="false" afterPath="$PROJECT_DIR$/selectStages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startscreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/startscreen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="241" column="21" lean-forward="true" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
+            <state relative-caret-position="394">
+              <caret line="266" column="20" selection-start-line="266" selection-start-column="20" selection-end-line="266" selection-end-column="20" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -144,6 +108,7 @@
       <find>self.time</find>
       <find>star</find>
       <find>stage</find>
+      <find>BUTTONS._STAGE_BUTTONS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,10 +135,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="362" />
-    <option name="y" value="239" />
-    <option name="width" value="926" />
-    <option name="height" value="1048" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="928" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -290,15 +255,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="928" height="1056" extended-state="4" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29139072" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14402619" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29892474" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2901879" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -393,8 +358,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GameManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="241" column="21" lean-forward="true" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
+        <state relative-caret-position="394">
+          <caret line="266" column="20" selection-start-line="266" selection-start-column="20" selection-end-line="266" selection-end-column="20" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
